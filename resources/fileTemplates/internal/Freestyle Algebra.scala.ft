@@ -1,0 +1,22 @@
+#parse("File Header.java")
+
+#if ((${PACKAGE_NAME} && ${PACKAGE_NAME} != ""))package ${PACKAGE_NAME} #end
+
+import cats.Monad
+import freestyle._
+
+object ${NAME} {
+
+  @free trait ${NAME}M {
+  }
+
+  trait Implicits {
+    implicit def ${NAME}MHandler[M[_]](implicit M: Monad[M]): ${NAME}M.Handler[M] =
+      new ${NAME}M.Handler[M] {
+      }
+
+  }
+
+  object implicits extends Implicits
+}
+
