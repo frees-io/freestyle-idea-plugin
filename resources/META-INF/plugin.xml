@@ -1,0 +1,35 @@
+<idea-plugin>
+  <id>com.intellij.freestyle</id>
+  <name>Freestyle</name>
+  <version>1.0</version>
+
+  <description><![CDATA[
+      A simple plugin to create Freestyle templates
+      <h1>Copyright</h1>
+      Freestyle is designed and developed by 47 Degrees
+      Copyright (C) 2017 47 Degrees. <a href="http://47deg.com">http://47deg.com</a>
+    ]]></description>
+
+  <!--<change-notes><![CDATA[
+      First release
+    ]]>
+  </change-notes> -->
+
+  <idea-version since-build="145.0"/>
+
+  <depends>org.intellij.scala</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <internalFileTemplate name="Freestyle Algebra"/>
+    <internalFileTemplate name="Freestyle Module"/>
+    <internalFileTemplate name="Freestyle Tagless"/>
+
+  </extensions>
+
+  <actions>
+    <action id="creation" class="freestyle.plugin.action.CreationAction" text="Freestyle"
+            description="templates of freestyle">
+      <add-to-group group-id="NewGroup" anchor="after" relative-to-action="Scala.NewClass"/>
+    </action>
+  </actions>
+</idea-plugin>
